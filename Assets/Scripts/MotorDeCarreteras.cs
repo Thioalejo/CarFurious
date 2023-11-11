@@ -26,7 +26,7 @@ public class MotorDeCarreteras : MonoBehaviour
 
     public GameObject cocheGO;
     public GameObject audioFXGO;
-   // public AudioFX audioFXScript;
+    public AudioFX audioFXScript;
     public GameObject bgFinalGO;
 
     void Start()
@@ -39,10 +39,26 @@ public class MotorDeCarreteras : MonoBehaviour
         mCamGo = GameObject.Find("MainCamera");
         mCamComp = mCamGo.GetComponent<Camera>();
 
+        bgFinalGO = GameObject.Find("PanelGameOver");
+        bgFinalGO.SetActive(false);
+
+        audioFXGO = GameObject.Find("AudioFx");
+        audioFXScript = audioFXGO.GetComponent<AudioFX>();
+
+        cocheGO = GameObject.FindObjectOfType<Coche>().gameObject;
+
         VelocidadMotorCarretera();
         MedirPantalla();
         BuscadorDeCalles();
     }
+
+    public void JuegoTerminadoEstados()
+    {
+        cocheGO.GetComponent<AudioSource>().Stop();
+        audioFXScript.FXMusic();
+        bgFinalGO.SetActive(true);
+    }
+
     void VelocidadMotorCarretera()
     {
         velocidad = 18;

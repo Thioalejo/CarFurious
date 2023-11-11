@@ -10,16 +10,17 @@ public class Cronometro : MonoBehaviour
     public float distancia;
     public Text txtTiempo;
     public Text txtDistancia;
+    public Text txtDistanciaFinal;
     // Start is called before the first frame update
     void Start()
     {
         motorDeCarreterasGo = GameObject.Find("MotorDeCarreteras");
         motorDeCarreterasScript = motorDeCarreterasGo.GetComponent<MotorDeCarreteras>();
 
-        txtTiempo.text = "2:00";
+        txtTiempo.text = "0:10";
         txtDistancia.text = "0";
 
-        tiempo = 20;
+        tiempo = 10;
     }
 
     // Update is called once per frame
@@ -33,6 +34,8 @@ public class Cronometro : MonoBehaviour
         if(tiempo <= 0 && motorDeCarreterasScript.juegoFinalizado == false)
         {
             motorDeCarreterasScript.juegoFinalizado = true;
+            motorDeCarreterasScript.JuegoTerminadoEstados();
+            txtDistanciaFinal.text = ((int)distancia).ToString()+ " mts";
         }
     }
 

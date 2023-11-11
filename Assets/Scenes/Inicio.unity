@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 722364684}
   - component: {fileID: 722364683}
   m_Layer: 5
-  m_Name: PanelGameOver
+  m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1713,7 +1713,6 @@ MonoBehaviour:
   mCamComp: {fileID: 0}
   cocheGO: {fileID: 0}
   audioFXGO: {fileID: 0}
-  audioFXScript: {fileID: 0}
   bgFinalGO: {fileID: 0}
 --- !u!4 &1373890123
 Transform:
@@ -2286,7 +2285,6 @@ MonoBehaviour:
   distancia: 0
   txtTiempo: {fileID: 1967380730}
   txtDistancia: {fileID: 1623139063}
-  txtDistanciaFinal: {fileID: 1057530892}
 --- !u!1 &1793775082
 GameObject:
   m_ObjectHideFlags: 0
